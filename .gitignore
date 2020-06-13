@@ -137,3 +137,6 @@ data/
 
 # Static Directory
 static/
+
+# Visual Studio Code Directory
+.vscode/
