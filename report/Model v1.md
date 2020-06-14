@@ -53,3 +53,16 @@ Matrix Factorization 결과 30,640 x 100인 행렬 U의 각 행은 사용자에 
 ## **3. Conclusionn**
 
 가장 기본적인 Matrix Facrotization 방법은 baseline 이다. 따라서 향후 다양한 모델을 적용하여서 정확률을 높일 것이다.
+
+### **Hyper Parameter Tuning**
+
+현재 모델에서 Hyper Parameter는 TruncatedSVD를 적용할 때 Feature의 개수(n_components), 반복 횟수(n_iter) 그리고 예측 시 기준이 되는 임계값(threshold) 이다. 
+
+Hyper Parameter를 조정하는 과정은 Kaggle Kernel을 사용했다. n_components, n_iter의 변화는 엄청나게 큰 성능의 개선을 보장하지 않는다.
+
+![Model Parameter Tuning](../figure/model/model-v1-hyper_parameter_tuning.png)
+
+n_components와 n_iter를 증가시켰을 때 약간의 성능 개선은 있으므로 이를 기반으로 모델을 수정하여서 제출한 결과 0.54660 의 정확률을 보았다. 
+
+![Model Parameter Tuning](../figure/model/model-v1-submission-tuning.png)
+
