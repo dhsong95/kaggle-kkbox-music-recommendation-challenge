@@ -137,9 +137,6 @@ data/
 
 # Static Directory
 static/
-<<<<<<< HEAD
-=======
 
 # Visual Studio Code Directory
 .vscode/
->>>>>>> dev
