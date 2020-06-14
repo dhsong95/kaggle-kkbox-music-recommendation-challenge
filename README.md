@@ -20,5 +20,5 @@ Kaggle Competition [WSDM - KKBox's Music Recommendation Challenge](https://www.k
 * 테스트 데이터에 대해서 정활률 0.54589
 * Sample Submission 0.5000 보다 높지만 KKbox Benchmark 인 0.61337 보단 낮은 결과
 * 성능 개선 방법
-  1. 현재 모델의 하이퍼파라미터(반복 횟수, Feature 개수) 조정. - Kaggle Kernel에서 수행 권장.
+  1. 현재 모델의 하이퍼파라미터(반복 횟수, Feature 개수) 조정. - Kaggle Kernel에서 수행 권장. [링크](https://www.kaggle.com/dhsong13/model-v1-mf-hyper-parameter-adjustment)
   2. K-NN 기반의 방법 + IDF 가중치를 활용한 방법
