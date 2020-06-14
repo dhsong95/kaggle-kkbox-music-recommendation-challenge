@@ -50,6 +50,7 @@ Kaggle Competition [KKBOX Music Recommendataion Challenge](https://www.kaggle.co
 |members.csv|34,403|
 |song_extra_info.csv|2,295,971|
 
+---
 
 ## **2. Basic EDA on each Column Data**
 
@@ -91,7 +92,7 @@ target에 영향을 주는 source_screen_name의 값으로는 "Local playlist mo
 
 "Online playlist more" 화면에서 재생한 음악은 한 달 안에 다시 재생되지 않을 가능성이 높다. 하지만 재생될 가능성과의 차이는 크지 않다. 
 
-"Radio" 화면에서 재생한 음악은 한 달 안에 다시 재생되지 않을 가능성이 높다. 비록 전체 빈도는 "Local playlist more"과 "Online playlist more" 보다 낮지만, arget 값을 0으로 예측하는 주요한 지표이다. 
+"Radio" 화면에서 재생한 음악은 한 달 안에 다시 재생되지 않을 가능성이 높다. 비록 전체 빈도는 "Local playlist more"과 "Online playlist more" 보다 낮지만, arget 값을 0으로 예측하는 주요한 지표이다.
 
 **<br>source_type**
 
@@ -256,10 +257,6 @@ artist_name은 노래를 부른 가수의 이름이다.
 
 상위 10 명의 가수를 확인한 결과 Various Artists가 가장 많은 빈도를 차지했다.  
 
-![artist_name barplot top 10 by target](../figure/eda/bar-songs_train-artist_name-target-top10.png)
-
-target에 영향을 주는 artist_name의 값을 특정하기 어렵다.
-
 **<br>composer**
 
 composer는 작곡가 이름이다. 
@@ -268,10 +265,6 @@ composer는 작곡가 이름이다.
 
 상위 10 명의 가수를 확인한 결과 Neuromancer가 가장 많은 빈도를 차지했다.  
 
-![composer barplot top 10 by target](../figure/eda/bar-songs_train-composer-target-top10.png)
-
-target에 영향을 주는 composer 값을 특정하기 어렵다.
-
 **<br>lyricist**
 
 lyricist는 작사가 이름이다. 
@@ -279,10 +272,6 @@ lyricist는 작사가 이름이다.
 ![lyricist barplot](../figure/eda/bar-songs-lyricist-top10.png)
 
 상위 10 명의 가수를 확인한 결과 Traditional이 가장 많은 빈도를 차지했다.  
-
-![lyricist barplot top 10 by target](../figure/eda/bar-songs_train-lyricist-target-top10.png)
-
-target에 영향을 주는 lyricist 값을 특정하기 어렵다.
 
 **<br>language**
 
@@ -307,6 +296,8 @@ target에 영향을 주는 language 값을 특정하기 어렵다.
 5. target에 큰 영향을 미치는 변수 부재. 
 
 songs.csv는 데이터에 저장된 사용자의 특성을 파악하는데 도움이 될 수 있지만, target 값을 예측하는데는 큰 도움이 되지 않을 것으로 예상한다.
+
+---
 
 ## **3. Conclusion**
 
