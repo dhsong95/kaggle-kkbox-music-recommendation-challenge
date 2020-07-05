@@ -140,3 +140,6 @@ static/
 
 # Visual Studio Code Directory
 .vscode/
+
+# Model Checkpoint
+model_checkpoints/
