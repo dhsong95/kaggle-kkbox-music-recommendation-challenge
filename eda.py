@@ -49,7 +49,7 @@ class EDAWorker:
     def barplot_train_column_by_target(self, column, horizontal=True):
         """Draw barplot.
         
-        Draw barplot about columns in train dataset. Visualize distributions of column data based on traget value.
+        Draw barplot about columns in train dataset. Visualize distributions of column data based on target value.
 
         Arags:
             column: str type. Which column in train dataset to be plotted.
