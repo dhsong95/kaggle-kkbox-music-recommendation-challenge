@@ -1,7 +1,7 @@
 """Preprocessing WSDM Dataset.
 
 Author: DHSong
-Last Modified At: 2020.07.06
+Last Modified At: 2020.07.07
 
 Preprocessing WSDM Dataset.
 """
@@ -177,7 +177,8 @@ class PreprocessingWorker:
         songs.loc[invalid_song_length, 'song_length'] = -1
         songs.loc[invalid_song_length, 'song_length_bin'] = '<invalid>'
         songs.loc[~invalid_song_length, 'song_length_bin'] = pd.qcut(songs.loc[~invalid_song_length, 'song_length'], 3)
-        
+        songs['song_length_bin'] = songs.song_length_bin.astype('str')
+
         # select only top genres.
         genre_list = list()
         for genres in tqdm(songs.genre_ids.str.split('|')):
@@ -301,9 +302,23 @@ if __name__ == '__main__':
     merged = pd.merge(left=train, right=members, how='left', on='msno')
     merged = pd.merge(left=merged, right=songs, how='left', on='song_id')
     merged = pd.merge(left=merged, right=song_extra_info, how='left', on='song_id')
+
+    genre_columns = ['genre_465', 'genre_958', 'genre_1609', 'genre_2022', 'genre_2122']
+    for column in genre_columns:
+        merged[column] = merged[column].fillna(0)
+        merged[column] = merged[column].astype('int')
+    merged = merged.fillna('<blank>')
+    merged['registered_via'] = merged.registered_via.astype('str')
     merged.to_csv('./data/train_merged.csv', index=False)
 
     merged = pd.merge(left=test, right=members, how='left', on='msno')
     merged = pd.merge(left=merged, right=songs, how='left', on='song_id')
     merged = pd.merge(left=merged, right=song_extra_info, how='left', on='song_id')
+
+    genre_columns = ['genre_465', 'genre_958', 'genre_1609', 'genre_2022', 'genre_2122']
+    for column in genre_columns:
+        merged[column] = merged[column].fillna(0)
+        merged[column] = merged[column].astype('int')
+    merged = merged.fillna('<blank>')
+    merged['registered_via'] = merged.registered_via.astype('str')
     merged.to_csv('./data/test_merged.csv', index=False)
